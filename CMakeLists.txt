@@ -11,9 +11,19 @@ enable_testing()
 file(GLOB all_SRCS
         "${PROJECT_SOURCE_DIR}/include/*.h"
         "${PROJECT_SOURCE_DIR}/include/*.hpp"
-        "${PROJECT_SOURCE_DIR}/src/Hello-Triangle/Exercise1.cpp"
+        "${PROJECT_SOURCE_DIR}/src/Textures/Textures.cpp"
+        "${PROJECT_SOURCE_DIR}/src/Textures/shader_s.h"
         "${PROJECT_SOURCE_DIR}/src/glad.c"
         )
+
+file(GLOB SHADERS
+        "${PROJECT_SOURCE_DIR}/src/Textures/shader.fs"
+        "${PROJECT_SOURCE_DIR}/src/Textures/shader.vs"
+        )
+
+foreach(SHADER ${SHADERS})
+   #file(COPY ${SHADER} DESTINATION ${CMAKE_SOURCE_DIR}/build/)
+endforeach(SHADER ${SHADERS})
 
 find_package(glfw3 3.3 REQUIRED)
 
