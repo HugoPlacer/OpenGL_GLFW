@@ -11,8 +11,8 @@ enable_testing()
 file(GLOB all_SRCS
         "${PROJECT_SOURCE_DIR}/include/*.h"
         "${PROJECT_SOURCE_DIR}/include/*.hpp"
-        "${PROJECT_SOURCE_DIR}/src/Textures/Textures.cpp"
-        "${PROJECT_SOURCE_DIR}/src/Textures/shader_s.h"
+        "${PROJECT_SOURCE_DIR}/src/Transformations/Transformations.cpp"
+        "${PROJECT_SOURCE_DIR}/src/Transformations/shader_s.h"
         "${PROJECT_SOURCE_DIR}/src/glad.c"
         )
 
