@@ -163,6 +163,7 @@ int main()
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
 
+        //first quad
         glm::mat4 trans = glm::mat4(1.0f);
         trans = glm::translate(trans, glm::vec3(cos(glfwGetTime()) / 2, sin(glfwGetTime()) / 2, 0.0f));
         trans = glm::rotate(trans, -(float)(sin(glfwGetTime()) * 3.1415), glm::vec3(0.0, 0.0, 0.1));
@@ -175,6 +176,30 @@ int main()
         ourShader.use();
         ourShader.setFloat("mixAmount", (sin(glfwGetTime() * 2) + 1.0f) / 2);
         glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        
+        //second quad
+        trans = glm::mat4(1.0f);
+        trans = glm::translate(trans, glm::vec3(-0.5f, 0.5f, 0.0f));
+        trans = glm::rotate(trans, -(float)glfwGetTime(), glm::vec3(0.0, 0.0, 0.1));
+        trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
+
+        transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+
+        // render container
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+        //third quad
+        trans = glm::mat4(1.0f);
+        trans = glm::translate(trans, glm::vec3(0.6f, -0.6f, 0.0f));
+        trans = glm::rotate(trans, -(float)glfwGetTime(), glm::vec3(0.0, 0.0, 0.1));
+        trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
+
+        transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+
+        // render container
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
