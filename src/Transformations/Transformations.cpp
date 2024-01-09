@@ -52,16 +52,16 @@ int main()
 
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader ourShader("../src/Textures/shader.vs", "../src/Textures/shader.fs");
+    Shader ourShader("../src/Transformations/shader.vs", "../src/Transformations/shader.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
     float vertices[] = {
         // positions                                // colors             // texture coords
-         0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   2.0f, 2.0f, // top right
-         0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   2.0f, 0.0f, // bottom right
+         0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // top right
+         0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // bottom right
         -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // bottom left
-        -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 2.0f  // top left 
+        -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f  // top left 
     };
     unsigned int indices[] = {  
         0, 1, 3, // first triangle
@@ -128,7 +128,7 @@ int main()
 
     // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
     stbi_set_flip_vertically_on_load(true);
-    data = stbi_load("../assets/awesomeface.png", &width, &height, &nrChannels, 0);
+    data = stbi_load("../assets/awesomeface2.png", &width, &height, &nrChannels, 0);
     if (data)
     {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
@@ -162,6 +162,14 @@ int main()
         glBindTexture(GL_TEXTURE_2D, texture1);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
+
+        glm::mat4 trans = glm::mat4(1.0f);
+        trans = glm::translate(trans, glm::vec3(cos(glfwGetTime()) / 2, sin(glfwGetTime()) / 2, 0.0f));
+        trans = glm::rotate(trans, -(float)(sin(glfwGetTime()) * 3.1415), glm::vec3(0.0, 0.0, 0.1));
+        trans = glm::scale(trans, glm::vec3((sin(glfwGetTime()) + 2.0f) / 4, (sin(glfwGetTime()) + 2.0f) / 4, 0.5));
+
+        unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
         // render container
         ourShader.use();
