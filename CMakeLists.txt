@@ -11,19 +11,19 @@ enable_testing()
 file(GLOB all_SRCS
         "${PROJECT_SOURCE_DIR}/include/*.h"
         "${PROJECT_SOURCE_DIR}/include/*.hpp"
-        "${PROJECT_SOURCE_DIR}/src/Transformations/Transformations.cpp"
-        "${PROJECT_SOURCE_DIR}/src/Transformations/shader_s.h"
+        "${PROJECT_SOURCE_DIR}/src/5.Coord-Systems/Coord-Systems.cpp"
+        "${PROJECT_SOURCE_DIR}/src/5.Coord-Systems/shader_s.h"
         "${PROJECT_SOURCE_DIR}/src/glad.c"
         )
 
-file(GLOB SHADERS
-        "${PROJECT_SOURCE_DIR}/src/Textures/shader.fs"
-        "${PROJECT_SOURCE_DIR}/src/Textures/shader.vs"
-        )
+#file(GLOB SHADERS
+#        "${PROJECT_SOURCE_DIR}/src/Coord/shader.fs"
+#        "${PROJECT_SOURCE_DIR}/src/Textures/shader.vs"
+#        )
 
-foreach(SHADER ${SHADERS})
+#foreach(SHADER ${SHADERS})
    #file(COPY ${SHADER} DESTINATION ${CMAKE_SOURCE_DIR}/build/)
-endforeach(SHADER ${SHADERS})
+#endforeach(SHADER ${SHADERS})
 
 find_package(glfw3 3.3 REQUIRED)
 
