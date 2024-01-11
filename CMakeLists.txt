@@ -11,8 +11,8 @@ enable_testing()
 file(GLOB all_SRCS
         "${PROJECT_SOURCE_DIR}/include/*.h"
         "${PROJECT_SOURCE_DIR}/include/*.hpp"
-        "${PROJECT_SOURCE_DIR}/src/5.Coord-Systems/Coord-Systems.cpp"
-        "${PROJECT_SOURCE_DIR}/src/5.Coord-Systems/shader_s.h"
+        "${PROJECT_SOURCE_DIR}/src/6.Camera/Camera.cpp"
+        "${PROJECT_SOURCE_DIR}/src/6.Camera/shader_s.h"
         "${PROJECT_SOURCE_DIR}/src/glad.c"
         )
 
