@@ -1,0 +1,7 @@
+{
+  "name": "opengl-glfw",
+  "version": "0.1",
+  "dependencies": [
+    "glfw3"
+  ]
+}

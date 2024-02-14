@@ -16,7 +16,7 @@ file(GLOB all_SRCS
         "${PROJECT_SOURCE_DIR}/src/glad.c"
         )
 
-#file(GLOB SHADERS
+#file(GLOB SHADE
 #        "${PROJECT_SOURCE_DIR}/src/Coord/shader.fs"
 #        "${PROJECT_SOURCE_DIR}/src/Textures/shader.vs"
 #        )
