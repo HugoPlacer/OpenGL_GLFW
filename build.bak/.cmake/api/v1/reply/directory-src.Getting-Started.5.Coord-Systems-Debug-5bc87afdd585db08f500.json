@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/Getting-Started/5.Coord-Systems",
+		"source" : "src/Getting-Started/5.Coord-Systems"
+	}
+}
