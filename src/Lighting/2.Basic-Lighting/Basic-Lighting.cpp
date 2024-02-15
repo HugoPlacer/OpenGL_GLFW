@@ -14,6 +14,7 @@
 #include <camera.h>
 
 #include <iostream>
+#include <string>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
@@ -56,7 +57,7 @@ int main()
 
     // glfw window creation
     // --------------------
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, WINDOW_NAME, NULL, NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -177,10 +178,10 @@ float vertices[] = {
         // -----
         processInput(window);
 
-        lightPos = glm::vec3(lightPos.x + cos(glfwGetTime()) * 0.01f, lightPos.y, lightPos.z + sin(glfwGetTime()) * 0.01f);
+        //lightPos = glm::vec3(lightPos.x + cos(glfwGetTime()) * 0.01f, lightPos.y, lightPos.z + sin(glfwGetTime()) * 0.01f);
 
-        //lightPos.x = 1.0f + sin(glfwGetTime()) * 2.0f;
-       //lightPos.y = sin(glfwGetTime() / 2.0f) * 1.0f;
+        lightPos.x = 1.0f + sin(glfwGetTime()) * 2.0f;
+       lightPos.y = sin(glfwGetTime() / 2.0f) * 1.0f;
 
         // render
         // ------

@@ -24,3 +24,4 @@ target_link_libraries(${PROJECT_NAME} glfw)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE ASSETS_FOLDER_PATH="${CMAKE_SOURCE_DIR}/assets")
 target_compile_definitions(${PROJECT_NAME} PRIVATE COMMON_SOURCE_DIR="${COMMON_SOURCE_DIR}")
+target_compile_definitions(${PROJECT_NAME} PRIVATE WINDOW_NAME="${PROJECT_NAME}")
