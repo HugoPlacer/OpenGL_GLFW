@@ -34,7 +34,7 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-glm::vec3 lightPos(-0.6f, 1.0f, 2.0f);
+glm::vec3 lightPos(0.0f, 1.0f, -2.0f);
 //glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 /*glm::vec3 lightColor(0.0f, 1.0f, 0.0f);
@@ -178,6 +178,9 @@ float vertices[] = {
         processInput(window);
 
         lightPos = glm::vec3(lightPos.x + cos(glfwGetTime()) * 0.01f, lightPos.y, lightPos.z + sin(glfwGetTime()) * 0.01f);
+
+        //lightPos.x = 1.0f + sin(glfwGetTime()) * 2.0f;
+       //lightPos.y = sin(glfwGetTime() / 2.0f) * 1.0f;
 
         // render
         // ------
