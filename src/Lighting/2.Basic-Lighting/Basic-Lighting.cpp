@@ -34,8 +34,8 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-//glm::vec3 lightPos(-0.6f, 1.0f, 2.0f);
-glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+glm::vec3 lightPos(-0.6f, 1.0f, 2.0f);
+//glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
 
 /*glm::vec3 lightColor(0.0f, 1.0f, 0.0f);
 glm::vec3 toyColor(1.0f, 0.5f, 0.31f);
@@ -177,7 +177,7 @@ float vertices[] = {
         // -----
         processInput(window);
 
-        //lightPos = glm::vec3(lightPos.x + sin(glfwGetTime()) * 0.01f, lightPos.y, lightPos.z);
+        lightPos = glm::vec3(lightPos.x + cos(glfwGetTime()) * 0.01f, lightPos.y, lightPos.z + sin(glfwGetTime()) * 0.01f);
 
         // render
         // ------
@@ -189,6 +189,7 @@ float vertices[] = {
         lightingShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
         lightingShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
         lightingShader.setVec3("lightPos", lightPos);
+        lightingShader.setVec3("viewPos", camera.Position); 
 
 
         // view/projection transformations
