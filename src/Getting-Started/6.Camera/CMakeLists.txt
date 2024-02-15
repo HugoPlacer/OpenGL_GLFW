@@ -10,7 +10,6 @@ enable_testing()
 
 set(srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/Camera.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/shader_s.h
 )
 
 find_package(glfw3 3.3 REQUIRED)

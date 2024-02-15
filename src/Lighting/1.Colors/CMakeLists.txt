@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5.0)
-project(Coord-Systems VERSION 0.1.0 LANGUAGES C CXX)
+project(Colors VERSION 0.1.0 LANGUAGES C CXX)
 
 include(CTest)
 include_directories(
@@ -9,7 +9,7 @@ include_directories(
 enable_testing()
 
 set(srcs
-    ${CMAKE_CURRENT_SOURCE_DIR}/Coord-Systems.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Colors.cpp
 )
 
 find_package(glfw3 3.3 REQUIRED)

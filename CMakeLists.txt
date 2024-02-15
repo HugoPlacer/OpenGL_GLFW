@@ -14,3 +14,6 @@ file(GLOB common_files
 
 add_subdirectory(${COMMON_SOURCE_DIR}/Getting-Started/5.Coord-Systems)
 add_subdirectory(${COMMON_SOURCE_DIR}/Getting-Started/6.Camera)
+
+add_subdirectory(${COMMON_SOURCE_DIR}/Lighting/1.Colors)
+add_subdirectory(${COMMON_SOURCE_DIR}/Lighting/2.Basic-Lighting)

@@ -80,7 +80,7 @@ int main()
 
     // build and compile our shader zprogram
     // ------------------------------------
-    Shader ourShader((std::string(COMMON_SOURCE_DIR) + "/Getting-Started/6.Camera/shader.vs").c_str(), (std::string(COMMON_SOURCE_DIR) + "/Getting-Started/6.Camera/shader.fs").c_str());
+    Shader ourShader((std::string(COMMON_SOURCE_DIR) + "/Getting-Started/6.Camera/colors.vs").c_str(), (std::string(COMMON_SOURCE_DIR) + "/Getting-Started/6.Camera/colors.fs").c_str());
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     // ------------------------------------------------------------------
