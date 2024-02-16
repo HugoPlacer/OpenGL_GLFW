@@ -177,10 +177,12 @@ float vertices[] = {
 
     unsigned int diffuseMap = loadTexture((std::string(ASSETS_FOLDER_PATH) + "/container2.png").c_str());
     unsigned int specularMap = loadTexture((std::string(ASSETS_FOLDER_PATH) + "/container2_specular.png").c_str());
+    unsigned int emisionMap = loadTexture((std::string(ASSETS_FOLDER_PATH) + "/matrix.jpg").c_str());
 
     lightingShader.use(); 
     lightingShader.setInt("material.diffuse", 0);
     lightingShader.setInt("material.specular", 1);
+    lightingShader.setInt("material.emision", 2);
 
     // render loop
     // -----------
@@ -240,6 +242,9 @@ float vertices[] = {
         // bind specular map
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, specularMap);
+
+        glActiveTexture(GL_TEXTURE2);
+        glBindTexture(GL_TEXTURE_2D, emisionMap);
 
         // render the cube
         glBindVertexArray(cubeVAO);
