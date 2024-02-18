@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/Lighting/2.Basic-Lighting",
+		"source" : "src/Lighting/2.Basic-Lighting"
+	}
+}
