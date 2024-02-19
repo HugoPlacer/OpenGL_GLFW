@@ -156,7 +156,7 @@ int main()
         litShader.setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
         litShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
         litShader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
-        /* // point light 1
+        // point light 1
         litShader.setVec3("pointLights[0].position", pointLightPositions[0]);
         litShader.setVec3("pointLights[0].ambient", 0.05f, 0.05f, 0.05f);
         litShader.setVec3("pointLights[0].diffuse", 0.8f, 0.8f, 0.8f);
@@ -198,7 +198,7 @@ int main()
         litShader.setFloat("spotLight.linear", 0.09f);
         litShader.setFloat("spotLight.quadratic", 0.032f);
         litShader.setFloat("spotLight.cutOff", glm::cos(glm::radians(12.5f)));
-        litShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(15.0f))); */
+        litShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(15.0f)));
 
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
