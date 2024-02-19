@@ -21,3 +21,5 @@ add_subdirectory(${COMMON_SOURCE_DIR}/Lighting/3.Materials)
 add_subdirectory(${COMMON_SOURCE_DIR}/Lighting/4.Lighting-Maps)
 add_subdirectory(${COMMON_SOURCE_DIR}/Lighting/5.Light-Casters)
 add_subdirectory(${COMMON_SOURCE_DIR}/Lighting/6.Multiple-Lights)
+
+add_subdirectory(${COMMON_SOURCE_DIR}/Model-Loading/1.Model-Loading)
