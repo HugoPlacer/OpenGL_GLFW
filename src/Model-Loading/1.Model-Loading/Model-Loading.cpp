@@ -143,6 +143,8 @@ int main()
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
+        std::cout << int(1 / deltaTime )<< "\n";
+
         // input
         // -----
         processInput(window);
