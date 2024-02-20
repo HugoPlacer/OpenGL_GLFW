@@ -50,6 +50,12 @@ bool firstMouse = true;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
+// lighting
+bool flashlight = true;
+bool lighting = true;
+
+bool wireframe = false;
+
 int main()
 {
   // glfw: initialize and configure
@@ -150,6 +156,7 @@ int main()
         litShader.use();
         litShader.setVec3("viewPos", camera.Position);
         litShader.setFloat("material.shininess", 32.0f);
+        litShader.setBool("flashlight", flashlight);
 
         // directional light
         litShader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
@@ -217,7 +224,7 @@ int main()
         unlitShader.setMat4("view", view);
         unlitShader.setMat4("model", model);
 
-        litShader.use();
+        lighting ? litShader.use() : unlitShader.use();
 
         backpack.Draw(litShader);
 
@@ -269,6 +276,40 @@ void processInput(GLFWwindow *window)
         camera.ProcessKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
+
+    static bool f1KeyPressed = false;
+
+    if (glfwGetKey(window, GLFW_KEY_F1) == GLFW_PRESS) {
+        if (!f1KeyPressed) {
+            lighting = !lighting;
+            f1KeyPressed = true;
+        }
+    } else if (glfwGetKey(window, GLFW_KEY_F1) == GLFW_RELEASE) {
+        f1KeyPressed = false;
+    }
+
+    static bool FKeyPressed = false;
+
+    if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS) {
+        if (!FKeyPressed) {
+            flashlight = !flashlight;
+            FKeyPressed = true;
+        }
+    } else if (glfwGetKey(window, GLFW_KEY_F) == GLFW_RELEASE) {
+        FKeyPressed = false;
+    }
+
+    static bool f2KeyPressed = false;
+
+    if (glfwGetKey(window, GLFW_KEY_F2) == GLFW_PRESS) {
+        if (!f2KeyPressed) {
+            wireframe = !wireframe;
+            wireframe ? glPolygonMode(GL_FRONT_AND_BACK, GL_LINE) : glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+            f2KeyPressed = true;
+        }
+    } else if (glfwGetKey(window, GLFW_KEY_F2) == GLFW_RELEASE) {
+        f2KeyPressed = false;
+    }
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
