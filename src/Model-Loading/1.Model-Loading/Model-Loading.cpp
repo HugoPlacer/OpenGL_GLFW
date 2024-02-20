@@ -95,7 +95,7 @@ int main()
     }
 
     // tell stb_image.h to flip loaded texture's on the y-axis (before loading model).
-    stbi_set_flip_vertically_on_load(true);
+    //stbi_set_flip_vertically_on_load(true);
 
     // configure global opengl state
     // -----------------------------
@@ -131,7 +131,7 @@ int main()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
     
-    Model backpack("/home/hugo/Documentos/OpenGL_GLFW/assets/backpack/backpack.obj");
+    Model backpack("/home/hugo/Documentos/OpenGL_GLFW/assets/Sponza-master/sponza.obj");
 
     // render loop
     // -----------
@@ -216,7 +216,7 @@ int main()
         // world transformation
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
-        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
+        model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));	// it's a bit too big for our scene, so scale it down
         litShader.setMat4("model", model);
 
         unlitShader.use();
