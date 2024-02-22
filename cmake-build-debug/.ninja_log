@@ -1,0 +1,7 @@
+# ninja log v5
+4	829	7302479492501872	src/Model-Loading/1.Model-Loading/CMakeFiles/Model-Loading.dir/__/__/glad.c.obj	1d616652147b6449
+1389	4966	7302479893022593	src/Lighting/6.Multiple-Lights/Multiple-Lights.exe	b1f4a20f8fd590e5
+0	1979	7302479503985730	src/Model-Loading/1.Model-Loading/CMakeFiles/Model-Loading.dir/Model-Loading.cpp.obj	220fde79a2e7a971
+0	701	7302479705900671	src/Lighting/6.Multiple-Lights/CMakeFiles/Multiple-Lights.dir/__/__/glad.c.obj	ebdace49dbd2dead
+3	1388	7302479892120407	src/Lighting/6.Multiple-Lights/CMakeFiles/Multiple-Lights.dir/Multiple-Lights.cpp.obj	c96802bb74fd5bda
+1	3871	7302490412740722	build.ninja	281660dbb8f12e4c

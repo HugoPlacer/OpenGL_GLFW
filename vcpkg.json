@@ -1,0 +1,9 @@
+{
+  "name": "opengl-glfw",
+  "version": "0.1",
+  "builtin-baseline": "2c401863dd54a640aeb26ed736c55489c079323b",
+  "dependencies": [
+    "glfw3",
+    "assimp"
+  ]
+}

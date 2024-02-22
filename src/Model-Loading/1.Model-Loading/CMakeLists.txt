@@ -13,7 +13,7 @@ set(srcs
 )
 
 find_package(glfw3 3.3 REQUIRED)
-find_package(assimp REQUIRED)
+find_package(assimp CONFIG REQUIRED)
 
 add_executable(${PROJECT_NAME} ${common_files} ${srcs})
 
@@ -21,7 +21,7 @@ set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
 
-target_link_libraries(${PROJECT_NAME} glfw assimp)
+target_link_libraries(${PROJECT_NAME} PRIVATE glfw assimp::assimp)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE ASSETS_FOLDER_PATH="${CMAKE_SOURCE_DIR}/assets")
 target_compile_definitions(${PROJECT_NAME} PRIVATE COMMON_SOURCE_DIR="${COMMON_SOURCE_DIR}")

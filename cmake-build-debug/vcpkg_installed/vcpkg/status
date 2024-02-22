@@ -1,0 +1,124 @@
+Package: vcpkg-cmake
+Version: 2023-05-04
+Architecture: x64-windows
+Multi-Arch: same
+Abi: b0cdf8b2eb1188de7228df91922b126358ab5479f866591f4695a55d820ff0de
+Status: install ok installed
+
+Package: zlib
+Version: 1.3
+Depends: vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 3e71fe739d8eec2bce7b1b6f07be569e95c65e4a9bf0c781816e2455c05d00d9
+Description: A compression library
+Status: install ok installed
+
+Package: vcpkg-cmake-config
+Version: 2022-02-06
+Port-Version: 1
+Architecture: x64-windows
+Multi-Arch: same
+Abi: f263b0082a6501f5c1f05e3d4e8814a1b4fc8138b8dc48fcae0944a6aa723911
+Status: install ok installed
+
+Package: utfcpp
+Version: 3.2.3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: b4cda34b47a33b9f2909c8c102936a82402d3ab8d40b7c209c49504ace6162e3
+Description: UTF-8 with C++ in a Portable Way
+Status: install ok installed
+
+Package: stb
+Version: 2023-04-11
+Port-Version: 1
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 0542410e6f3f0b95da75abcddd7e693cb14bb778c9fcd4dbe9886f1221c993f3
+Description: public domain header-only libraries
+Status: install ok installed
+
+Package: rapidjson
+Version: 2023-04-27
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 3f81a75fcf53520460baf712325d7a51fe3b10d284e8d439a93a212d944e3466
+Description: A fast JSON parser/generator for C++ with both SAX/DOM style API <http://rapidjson.org/>
+Status: install ok installed
+
+Package: pugixml
+Version: 1.13.0
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 5e406e8208087a135e95301c1e35d04db2ac1614373b6df1c9efe8f814913a7c
+Description: Light-weight, simple and fast XML parser for C++ with XPath support
+Status: install ok installed
+
+Package: poly2tri
+Version: 2020-07-21
+Port-Version: 3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 6a69fde2260c7d5b209d1adbb8de8e23498160954f0779e9e9ed769e7b002a80
+Description: The Clipper library performs clipping and offsetting for both lines and polygons. All four boolean clipping operations are supported - intersection, union, difference and exclusive-or. Polygons can be of any shape including self-intersecting polygons.
+Status: install ok installed
+
+Package: vcpkg-cmake-get-vars
+Version: 2023-03-02
+Depends: vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: ded6a5451bc4e08c8100803f5988f58ff40cec2145f59f8efcda623766e0fdef
+Status: install ok installed
+
+Package: minizip
+Version: 1.3
+Depends: vcpkg-cmake, vcpkg-cmake-config, vcpkg-cmake-get-vars, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 69958d81dfc89d1cc9c60a806fbfbc8641c3a60ab49696a2cf3ad14f6f23d77e
+Description: Minizip zip file manipulation library
+Status: install ok installed
+
+Package: kubazip
+Version: 0.2.4
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: c2ac5277958845d1b4a15c9bd58b9d05fed78c71d3dcc875d41af8bd1494b3b8
+Description: A portable, simple zip library written in C
+Status: install ok installed
+
+Package: draco
+Version: 1.5.6
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 84f951c03332cf6d96738496fd4d176db406f9bb5f447efc4f0910390f4854ca
+Description: A library for compressing and decompressing 3D geometric meshes and point clouds. It is intended to improve the storage and transmission of 3D graphics.
+Status: install ok installed
+
+Package: assimp
+Version: 5.2.5
+Depends: draco, kubazip, minizip, poly2tri, pugixml, rapidjson, stb, utfcpp, vcpkg-cmake, vcpkg-cmake-config, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 7fb7a6833f790303780e208a22d36b5e1fce7c49df6516bfc426deae5d6947d4
+Description: The Open Asset import library
+Status: install ok installed
+
+Package: glfw3
+Version: 3.3.8
+Port-Version: 2
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 8d1493d914ceb9f67b68dfda1a45fca9ca721176156aa9897cc0f8f8b0d95b08
+Description: GLFW is a free, Open Source, multi-platform library for OpenGL, OpenGL ES and Vulkan application development. It provides a simple, platform-independent API for creating windows, contexts and surfaces, reading input, handling events, etc.
+Status: install ok installed
+

@@ -1,0 +1,627 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src/Getting-Started/5.Coord-Systems",
+					"jsonFile" : "directory-src.Getting-Started.5.Coord-Systems-Debug-e2e91a21657763a1c127.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "src/Getting-Started/5.Coord-Systems",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36
+					]
+				},
+				{
+					"build" : "src/Getting-Started/6.Camera",
+					"jsonFile" : "directory-src.Getting-Started.6.Camera-Debug-114736552cafca96fb1f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "src/Getting-Started/6.Camera",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "src/Lighting/1.Colors",
+					"jsonFile" : "directory-src.Lighting.1.Colors-Debug-5a8ebdc9fbd1062d8ad0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "src/Lighting/1.Colors",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "src/Lighting/2.Basic-Lighting",
+					"jsonFile" : "directory-src.Lighting.2.Basic-Lighting-Debug-eaa6cc22cb69a0e12a91.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "src/Lighting/2.Basic-Lighting",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "src/Lighting/3.Materials",
+					"jsonFile" : "directory-src.Lighting.3.Materials-Debug-4dec02702eb3e8fb435d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 5,
+					"source" : "src/Lighting/3.Materials",
+					"targetIndexes" : 
+					[
+						24
+					]
+				},
+				{
+					"build" : "src/Lighting/4.Lighting-Maps",
+					"jsonFile" : "directory-src.Lighting.4.Lighting-Maps-Debug-811d241b6f10fb360e55.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 6,
+					"source" : "src/Lighting/4.Lighting-Maps",
+					"targetIndexes" : 
+					[
+						23
+					]
+				},
+				{
+					"build" : "src/Lighting/5.Light-Casters",
+					"jsonFile" : "directory-src.Lighting.5.Light-Casters-Debug-b752d2d599533448adcf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 7,
+					"source" : "src/Lighting/5.Light-Casters",
+					"targetIndexes" : 
+					[
+						22
+					]
+				},
+				{
+					"build" : "src/Lighting/6.Multiple-Lights",
+					"jsonFile" : "directory-src.Lighting.6.Multiple-Lights-Debug-4c5a235b56d3b25f4354.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 8,
+					"source" : "src/Lighting/6.Multiple-Lights",
+					"targetIndexes" : 
+					[
+						26
+					]
+				},
+				{
+					"build" : "src/Model-Loading/1.Model-Loading",
+					"jsonFile" : "directory-src.Model-Loading.1.Model-Loading-Debug-ec4a7fd1577f60de4734.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 9,
+					"source" : "src/Model-Loading/1.Model-Loading",
+					"targetIndexes" : 
+					[
+						25
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "OpenGL_GLFW"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "Coord-Systems",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "Camera",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "Colors",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "Basic-Lighting",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "Materials",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						24
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "Lighting-Maps",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						23
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "Light-Casters",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						22
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "Multiple-Lights",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						26
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9
+					],
+					"name" : "Model-Loading",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						25
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 4,
+					"id" : "Basic-Lighting::@7431ef75013901cfc28b",
+					"jsonFile" : "target-Basic-Lighting-Debug-332d9654eaa04d14869f.json",
+					"name" : "Basic-Lighting",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Camera::@7c7fbab462beb49c614f",
+					"jsonFile" : "target-Camera-Debug-c11b188063db152696ec.json",
+					"name" : "Camera",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Colors::@f900ff8f7a56cd055a8a",
+					"jsonFile" : "target-Colors-Debug-7f0eed5e91ab15778c82.json",
+					"name" : "Colors",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Continuous::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-Continuous-Debug-f253bf9a4eabd4e18905.json",
+					"name" : "Continuous",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousBuild::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ContinuousBuild-Debug-b308250e16977d00bf78.json",
+					"name" : "ContinuousBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousConfigure::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ContinuousConfigure-Debug-ce1964a66f7a742c3eb5.json",
+					"name" : "ContinuousConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousCoverage::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ContinuousCoverage-Debug-f8e3933ad0c4eeb00305.json",
+					"name" : "ContinuousCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousMemCheck::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ContinuousMemCheck-Debug-92b2fb5994cd490b987e.json",
+					"name" : "ContinuousMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousStart::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ContinuousStart-Debug-3f01d34bd3f03c1d819f.json",
+					"name" : "ContinuousStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousSubmit::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ContinuousSubmit-Debug-b3771ccf0d5839d135e1.json",
+					"name" : "ContinuousSubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousTest::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ContinuousTest-Debug-2d6d89376aceaac909cd.json",
+					"name" : "ContinuousTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ContinuousUpdate::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ContinuousUpdate-Debug-6f2523370a47d7521fe9.json",
+					"name" : "ContinuousUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Coord-Systems::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-Coord-Systems-Debug-e33756b15a4c0c4cb529.json",
+					"name" : "Coord-Systems",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Experimental::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-Experimental-Debug-35629247e6aa1f9ee7e0.json",
+					"name" : "Experimental",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalBuild::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ExperimentalBuild-Debug-018478adab7989572d4a.json",
+					"name" : "ExperimentalBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalConfigure::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ExperimentalConfigure-Debug-5c748a4a6e119d439bdf.json",
+					"name" : "ExperimentalConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalCoverage::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ExperimentalCoverage-Debug-daef58800e8692ffd20c.json",
+					"name" : "ExperimentalCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalMemCheck::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ExperimentalMemCheck-Debug-9ead9414f75072f1e5ad.json",
+					"name" : "ExperimentalMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalStart::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ExperimentalStart-Debug-c20e7290f582ce135fa5.json",
+					"name" : "ExperimentalStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalSubmit::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ExperimentalSubmit-Debug-921d66a0d8edd61085bf.json",
+					"name" : "ExperimentalSubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalTest::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ExperimentalTest-Debug-bb50405031ed30ad98d0.json",
+					"name" : "ExperimentalTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ExperimentalUpdate::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-ExperimentalUpdate-Debug-8ca2f46ae165cb8fbe1f.json",
+					"name" : "ExperimentalUpdate",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "Light-Casters::@ed166fa4e54e17f1de76",
+					"jsonFile" : "target-Light-Casters-Debug-7c6bc77b3c7dcd7cd8aa.json",
+					"name" : "Light-Casters",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "Lighting-Maps::@713933d45bf1f2166960",
+					"jsonFile" : "target-Lighting-Maps-Debug-4079d2059ae4600eb191.json",
+					"name" : "Lighting-Maps",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "Materials::@9421407282de0b33995d",
+					"jsonFile" : "target-Materials-Debug-cefb29e79b35c65c1061.json",
+					"name" : "Materials",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "Model-Loading::@ee80ba95277e36cc8c93",
+					"jsonFile" : "target-Model-Loading-Debug-cab7fe4e16c53bb12091.json",
+					"name" : "Model-Loading",
+					"projectIndex" : 9
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "Multiple-Lights::@15b560b69a9f368efd08",
+					"jsonFile" : "target-Multiple-Lights-Debug-f575de9f0fd0d76f3b78.json",
+					"name" : "Multiple-Lights",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Nightly::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-Nightly-Debug-01bcb854f6b2c8bd70bd.json",
+					"name" : "Nightly",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyBuild::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-NightlyBuild-Debug-7207b91bcb3439b31a1b.json",
+					"name" : "NightlyBuild",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyConfigure::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-NightlyConfigure-Debug-55ac0ca09c35ccac11ba.json",
+					"name" : "NightlyConfigure",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyCoverage::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-NightlyCoverage-Debug-8187c41dc9dde1a59eea.json",
+					"name" : "NightlyCoverage",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyMemCheck::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-NightlyMemCheck-Debug-5fa802a840fe09348129.json",
+					"name" : "NightlyMemCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyMemoryCheck::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-NightlyMemoryCheck-Debug-feb862a729914f2e3428.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyStart::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-NightlyStart-Debug-7e3b7c51fb24fbe15992.json",
+					"name" : "NightlyStart",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlySubmit::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-NightlySubmit-Debug-2c98b420193d3b231e27.json",
+					"name" : "NightlySubmit",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyTest::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-NightlyTest-Debug-b136f9430f238480fa59.json",
+					"name" : "NightlyTest",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "NightlyUpdate::@1b8b9341002ab87fd230",
+					"jsonFile" : "target-NightlyUpdate-Debug-891b209d2d392cf7758f.json",
+					"name" : "NightlyUpdate",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Hugo/Documents/GitHub/OpenGL_GLFW/cmake-build-debug",
+		"source" : "C:/Users/Hugo/Documents/GitHub/OpenGL_GLFW"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
