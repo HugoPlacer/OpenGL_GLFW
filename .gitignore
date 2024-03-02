@@ -335,3 +335,6 @@ prefab/
 ###################
 pythonenv3.8/
 .venv/
+
+
+/.cache
