@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5.0)
 project(Model-Loading VERSION 0.1.0 LANGUAGES C CXX)
 
-include(CTest)
+
 include_directories(
         ${CMAKE_SOURCE_DIR}/include
         ${CMAKE_SOURCE_DIR}/src
@@ -17,9 +17,6 @@ find_package(assimp REQUIRED)
 
 add_executable(${PROJECT_NAME} ${common_files} ${srcs})
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
 
 target_link_libraries(${PROJECT_NAME} glfw assimp)
 

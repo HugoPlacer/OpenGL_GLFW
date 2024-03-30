@@ -22,7 +22,6 @@
 #include <mesh.h>
 
 #include <rgb-hsl/hsl_rgb.h>
-#include <vector>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
@@ -100,14 +99,17 @@ int main()
     // configure global opengl state
     // -----------------------------
     glEnable(GL_DEPTH_TEST);
+    glEnable(GL_STENCIL_TEST);
 
     // build and compile our shader zprogram
     // ------------------------------------
 
-    Shader litShader((std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/1.Depth-Testing/lit.vs").c_str(),(std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/1.Depth-Testing/lit.fs").c_str());
-    Shader unlitShader((std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/1.Depth-Testing/unlit.vs").c_str(),(std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/1.Depth-Testing/unlit.fs").c_str());
-    Shader lightCubeShader((std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/1.Depth-Testing/light_cube.vs").c_str(),(std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/1.Depth-Testing/light_cube.fs").c_str());
+    Shader litShader((std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/2.Stencil-Testing/lit.vs").c_str(),(std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/2.Stencil-Testing/lit.fs").c_str());
+    Shader unlitShader((std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/2.Stencil-Testing/unlit.vs").c_str(),(std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/2.Stencil-Testing/unlit.fs").c_str());
+    Shader lightCubeShader((std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/2.Stencil-Testing/light_cube.vs").c_str(),(std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/2.Stencil-Testing/light_cube.fs").c_str());
 
+    Shader singleColorShader((std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/2.Stencil-Testing/unlit.vs").c_str(),(std::string(COMMON_SOURCE_DIR) + "/Advanced-OpenGL/2.Stencil-Testing/shaderSingleColor.fs").c_str());
+    
     glm::vec3 pointLightPositions[] = {
         glm::vec3( 0.7f,  0.2f,  2.0f),
         glm::vec3( 2.3f, -3.3f, -4.0f),
@@ -131,7 +133,7 @@ int main()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
     
-    Model backpack("/home/hugo/Documentos/OpenGL_GLFW/assets/Sponza-master/sponza.obj");
+    Model backpack("/home/hugo/Documentos/OpenGL_GLFW/assets/stanford-bunny.obj");
 
     // render loop
     // -----------
@@ -151,8 +153,14 @@ int main()
 
         // render
         // ------
+        glEnable(GL_DEPTH_TEST);
+        glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+
+        glStencilFunc(GL_ALWAYS, 1, 0xFF); // all fragments should pass the stencil test
+        glStencilMask(0xFF); // enable writing to the stencil buffer
         
         // be sure to activate shader when setting uniforms/drawing objects
         litShader.use();
@@ -218,7 +226,7 @@ int main()
         // world transformation
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
-        model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));	// it's a bit too big for our scene, so scale it down
+        //model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));	// it's a bit too big for our scene, so scale it down
         litShader.setMat4("model", model);
 
         unlitShader.use();
@@ -229,6 +237,20 @@ int main()
         lighting ? litShader.use() : unlitShader.use();
 
         backpack.Draw(litShader);
+
+        glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+        glStencilMask(0x00);
+        glDisable(GL_DEPTH_TEST);
+        singleColorShader.use();
+        model = glm::scale(model, glm::vec3(1.1f, 1.1f, 1.1f));
+        singleColorShader.setMat4("projection", projection);
+        singleColorShader.setMat4("view", view);
+        singleColorShader.setMat4("model", model);
+        backpack.Draw(singleColorShader);
+
+        glStencilMask(0xFF);
+        glStencilFunc(GL_ALWAYS, 1, 0xFF);   
+        glEnable(GL_DEPTH_TEST);  
 
         // also draw the lamp object
         lightCubeShader.use();
