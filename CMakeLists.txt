@@ -30,3 +30,5 @@ add_subdirectory(${COMMON_SOURCE_DIR}/Advanced-OpenGL/3.Blending)
 add_subdirectory(${COMMON_SOURCE_DIR}/Advanced-OpenGL/4.Face-Culling)
 add_subdirectory(${COMMON_SOURCE_DIR}/Advanced-OpenGL/5.Framebuffers)
 add_subdirectory(${COMMON_SOURCE_DIR}/Advanced-OpenGL/6.Cubemaps)
+
+add_subdirectory(${COMMON_SOURCE_DIR}/Advanced-Lighting/1.Advanced-Lighting)
