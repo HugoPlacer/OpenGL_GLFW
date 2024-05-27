@@ -33,3 +33,4 @@ add_subdirectory(${COMMON_SOURCE_DIR}/Advanced-OpenGL/6.Cubemaps)
 
 add_subdirectory(${COMMON_SOURCE_DIR}/Advanced-Lighting/1.Advanced-Lighting)
 add_subdirectory(${COMMON_SOURCE_DIR}/Advanced-Lighting/2.Gamma-Correction)
+add_subdirectory(${COMMON_SOURCE_DIR}/Advanced-Lighting/3.Shadows/Shadow-Mapping)
