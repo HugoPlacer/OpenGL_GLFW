@@ -302,9 +302,9 @@ glm::vec3 pointLightPosition = glm::vec3( 0.0f,  -2.0f,  0.0f);
 
         // directional light
         lightingShader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
-        lightingShader.setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
-        lightingShader.setVec3("dirLight.diffuse", 1, 1, 1);
-        lightingShader.setVec3("dirLight.specular", 1,1,1);
+        lightingShader.setVec3("dirLight.ambient", 0.3f, 0.3f, 0.3f);
+        lightingShader.setVec3("dirLight.diffuse", 0.7f, 0.7f, 0.7f);
+        lightingShader.setVec3("dirLight.specular", 0.5f,0.5f,0.5f);
 
 
         // point light
@@ -366,7 +366,7 @@ void renderScene(const Shader &shader)
         model = glm::mat4(1.0f);
         for(unsigned int i = 0; i < 10; i++){
             glm::mat4 model = glm::mat4(1.0f);
-            model = glm::translate(model, cubePositions[i] + glm::vec3(0, 1, 0));
+            model = glm::translate(model, cubePositions[i] + glm::vec3(cos(glfwGetTime() * (i + 1)) * ((i % 2) ? 1 : -1), 1, sin(glfwGetTime() * (i + 1))));
             float angle = 20.0f * i;
             model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
             shader.setMat4("model", model);
