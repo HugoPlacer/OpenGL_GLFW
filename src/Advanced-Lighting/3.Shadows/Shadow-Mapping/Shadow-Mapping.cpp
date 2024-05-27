@@ -36,7 +36,7 @@ bool blinn = false;
 bool blinnKeyPressed = false;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 15.0f, 3.0f));
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -49,13 +49,13 @@ unsigned int VBO, cubeVAO;
 
 glm::vec3 cubePositions[] = {
 glm::vec3( 0.0f,  0.0f,  0.0f),
-glm::vec3( 2.0f,  5.0f, -15.0f),
+glm::vec3( 2.0f,  5.0f, -10.0f),
 glm::vec3(-1.5f, -2.2f, -2.5f),
-glm::vec3(-3.8f, -2.0f, -12.3f),
-glm::vec3( 2.4f, -0.4f, -3.5f),
+glm::vec3(-3.8f, -2.0f, -10.3f),
+glm::vec3( 4.4f, -0.4f, -3.5f),
 glm::vec3(-1.7f,  3.0f, -7.5f),
-glm::vec3( 1.3f, -2.0f, -2.5f),
-glm::vec3( 1.5f,  2.0f, -2.5f),
+glm::vec3( 3.3f, -2.0f, -5.5f),
+glm::vec3( 1.5f,  4.0f, -6.5f),
 glm::vec3( 1.5f,  0.2f, -1.5f),
 glm::vec3(-1.3f,  1.0f, -1.5f)
 };
@@ -218,8 +218,10 @@ glm::vec3 pointLightPosition = glm::vec3( 0.0f,  -2.0f,  0.0f);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
+    float borderColor[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+    glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
 
     glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthMap, 0);
@@ -234,6 +236,7 @@ glm::vec3 pointLightPosition = glm::vec3( 0.0f,  -2.0f,  0.0f);
 
     lightingShader.use(); 
     lightingShader.setInt("material.diffuse", 0);
+    lightingShader.setInt("shadowMap", 1);
 
     // render loop
     // -----------
@@ -255,7 +258,7 @@ glm::vec3 pointLightPosition = glm::vec3( 0.0f,  -2.0f,  0.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         //Configure Shaders and Matrices
-        float near_plane = 1.0f, far_plane = 7.5f;
+        float near_plane = 1.0f, far_plane = 15.0f;
         glm::mat4 lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
 
         glm::mat4 lightView = glm::lookAt(glm::vec3(-2.0f, 4.0f, -1.0f), 
@@ -273,7 +276,9 @@ glm::vec3 pointLightPosition = glm::vec3( 0.0f,  -2.0f,  0.0f);
         // bind diffuse map
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, diffuseMap);
+        glCullFace(GL_FRONT);
         renderScene(simpleDepthShader);
+        glCullFace(GL_BACK); // don't forget to reset original culling face
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
         // reset viewport
@@ -282,23 +287,25 @@ glm::vec3 pointLightPosition = glm::vec3( 0.0f,  -2.0f,  0.0f);
 
         // render Depth map to quad for visual debugging
         // ---------------------------------------------
-        debugDepthQuad.use();
+        /* debugDepthQuad.use();
         debugDepthQuad.setFloat("near_plane", near_plane);
         debugDepthQuad.setFloat("far_plane", far_plane);
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, depthMap);
-        renderQuad();
+        renderQuad(); */
 
-       /*  // be sure to activate shader when setting uniforms/drawing objects
+        // be sure to activate shader when setting uniforms/drawing objects
         lightingShader.use();
         lightingShader.setVec3("viewPos", camera.Position);
+        lightingShader.setVec3("lightPos", glm::vec3(-2.0f, 4.0f, -1.0f));
         lightingShader.setFloat("material.shininess", 16.0f);
 
         // directional light
         lightingShader.setVec3("dirLight.direction", -0.2f, -1.0f, -0.3f);
         lightingShader.setVec3("dirLight.ambient", 0.05f, 0.05f, 0.05f);
-        lightingShader.setVec3("dirLight.diffuse", 0.4f, 0.4f, 0.4f);
-        lightingShader.setVec3("dirLight.specular", 0.5f, 0.5f, 0.5f);
+        lightingShader.setVec3("dirLight.diffuse", 1, 1, 1);
+        lightingShader.setVec3("dirLight.specular", 1,1,1);
+
 
         // point light
         lightingShader.setVec3("pointLights[0].position", pointLightPosition);
@@ -313,7 +320,14 @@ glm::vec3 pointLightPosition = glm::vec3( 0.0f,  -2.0f,  0.0f);
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
         glm::mat4 view = camera.GetViewMatrix();
         lightingShader.setMat4("projection", projection);
-        lightingShader.setMat4("view", view); */
+        lightingShader.setMat4("view", view);
+        lightingShader.setMat4("lightSpaceMatrix", lightSpaceMatrix);
+
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, diffuseMap);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D, depthMap);
+        renderScene(lightingShader);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
@@ -337,8 +351,8 @@ void renderScene(const Shader &shader)
 {
     // world transformation
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0,-5.0f,0));
-        model = glm::scale(model, glm::vec3(5.0f));
+        model = glm::translate(model, glm::vec3(2.0f,-10.0f,-3.0f));
+        model = glm::scale(model, glm::vec3(15.0f));
 
         shader.setMat4("model", model);
 
@@ -352,7 +366,7 @@ void renderScene(const Shader &shader)
         model = glm::mat4(1.0f);
         for(unsigned int i = 0; i < 10; i++){
             glm::mat4 model = glm::mat4(1.0f);
-            model = glm::translate(model, cubePositions[i]);
+            model = glm::translate(model, cubePositions[i] + glm::vec3(0, 1, 0));
             float angle = 20.0f * i;
             model = glm::rotate(model, angle, glm::vec3(1.0f, 0.3f, 0.5f));
             shader.setMat4("model", model);
